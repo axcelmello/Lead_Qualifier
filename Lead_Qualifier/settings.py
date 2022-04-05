@@ -39,9 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Apps criados
-
-
-
+    'Painel',
+    'Qualifier',
 ]
 
 MIDDLEWARE = [
