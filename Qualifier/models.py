@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Cadastro_empresa(models.Model):
-    nome_fantasia     = models.CharField(max_length=50)
+    nome_fantasia     = models.CharField(max_length=50, unique=True)
     razao_social      = models.CharField(max_length=50)
-    cnpj              = models.IntegerField()
+    cnpj              = models.IntegerField(unique=True)
     telefone          = models.IntegerField()
     email             = models.EmailField(max_length=25)
     site              = models.CharField(max_length=25)
@@ -14,7 +14,7 @@ class Cadastro_empresa(models.Model):
 
 class Cadastro_contato(models.Model):
     nome              = models.CharField(max_length=50)
-    nomeempresa       = models.ForeignKey(Cadastro_empresa, on_delete=models.CASCADE)
+    nomeempresa       = models.ForeignKey(Cadastro_empresa, on_delete=models.CASCADE, to_field="nome_fantasia")
     cargo             = models.CharField(max_length=25)
     telefone          = models.IntegerField()
     email             = models.EmailField(max_length=25)
@@ -37,7 +37,7 @@ class Dados_empresa(models.Model):
         ('Nacional', 'Nacional'),
         ('Multinacional', 'Multinacional'),
     )
-    cnpj              = models.ForeignKey(Cadastro_empresa, on_delete=models.CASCADE)
+    cnpj              = models.ForeignKey(Cadastro_empresa, on_delete=models.CASCADE, to_field="cnpj")
     n_funcionarios    = models.IntegerField()
     setor             = models.CharField(max_length=15, choices=SETOR)
     categoria         = models.CharField(max_length=120)    #tecnologia, saúde, produtos, industria
