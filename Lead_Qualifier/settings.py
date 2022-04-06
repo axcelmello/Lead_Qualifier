@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Apps criados
     'Painel',
     'Qualifier',
+    'Paginas',
 ]
 
 MIDDLEWARE = [
