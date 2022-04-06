@@ -25,8 +25,8 @@ urlpatterns = [
     ###Paginas criadas
     path('', Paginas.views.homepage),
     path('homepage/', Paginas.views.homepage),
-    path('cadastro_empresa', Paginas.views.Cadastro_empresa),
-    path('cadastro_contato', Paginas.views.Cadastro_contato),
+    path('cadastro_empresa', Paginas.views.cadastro_empresa),
+    path('cadastro_contato', Paginas.views.cadastro_contato),
 
     path('painel/', Paginas.views.painel),
 ]
