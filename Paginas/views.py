@@ -10,3 +10,12 @@ def homepage(request, *args, **kwargs):
     # print(request.POST)
     # print(request.GET)
     return render(request, "Homepage.html", {})
+
+def painel(request, *args, **kwargs):
+    return render(request, "Painel.html", {})
+
+def cadastro_empresa(request, *args, **kwargs):
+    return render(request, "Cadastro_empresa.html", {})
+
+def cadastro_contato(request, *args, **kwargs):
+    return render(request, "Cadastro_contato.html", {})
