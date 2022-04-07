@@ -6,16 +6,21 @@ from Qualifier.models import Dados_empresa
 
 # Create your views here.
 
+# print(request.POST)
+# print(request.GET)
+
 def homepage(request, *args, **kwargs):
-    # print(request.POST)
-    # print(request.GET)
-    return render(request, "Homepage.html", {})
+    if request.method == 'GET':
+        return render(request, "Homepage.html", {})
 
 def painel(request, *args, **kwargs):
-    return render(request, "Painel.html", {})
+    if request.method == 'GET':
+        return render(request, "Painel.html", {})
 
 def cadastro_empresa(request, *args, **kwargs):
-    return render(request, "Cadastro_empresa.html", {})
+    if request.method == 'GET':
+        return render(request, "Cadastro_empresa.html", {})
 
 def cadastro_contato(request, *args, **kwargs):
-    return render(request, "Cadastro_contato.html", {})
+    if request.method == 'GET':
+        return render(request, "Cadastro_contato.html", {})
