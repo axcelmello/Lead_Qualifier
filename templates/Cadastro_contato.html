@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cadastro Contato</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
     <div>
         <h2>Cadastro Contato</h2>
         <form name = "Cadastro Empresa" method="post" action="."> {% csrf_token %}
-            {{ form.as_ul }}
+            {{ form.as_p }}
             <input type="submit" value="Cadastrar">
         </form>
     </div>
