@@ -8,11 +8,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cadastro Empresa</title>
 </head>
 <body>
+    <header>
+        {% include 'Navbar_up.html' %}
+    </header>
 
-    <h1>Cadastro Empresa</h1>
+    <div>
+        <h2>Cadastro Empresa</h2>
+        <form name = "Cadastro Empresa" method="post" action="."> {% csrf_token %}
+            <div>
+                    <label> Nome Fantasia </label>
+                    <input type="text" name="nome_fantasia"/>
+            </div>
+            <div>
+                    <label> Razão Social </label>
+                    <input type="text" name="razao_social"/>
+            </div>
+            <div>
+                    <label> CNPJ </label>
+                    <input type="number" name="cnpj"/>
+            </div>
+            <div>
+                    <label> Telefone </label>
+                    <input type="number" name="telefone"/>
+            </div>
+            <div>
+                    <label> e-Mail </label>
+                    <input type="email" name="email"/>
+            </div>
+            <div>
+                    <label> Site </label>
+                    <input type="text" name="site"/>
+            </div>
+            <div>
+                    <label> Endereço </label>
+                    <input type="text" name="endereco"/>
+            </div>
+            <div>
+                    <label> Pais Sede </label>
+                    <input type="text" name="pais_sede"/>
+            </div>
 
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <footer>
+        {% include 'Navbar_down.html' %}
+    </footer>
 </body>
 </html>
