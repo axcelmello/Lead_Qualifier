@@ -4,6 +4,7 @@ from Qualifier.models import Cadastro_empresa
 from Qualifier.models import Cadastro_contato
 from Qualifier.models import Dados_empresa
 
+from Qualifier.forms import Contato_form
 # Create your views here.
 
 # print(request.POST)
@@ -22,4 +23,12 @@ def cadastro_empresa(request, *args, **kwargs):
     return render(request, "Cadastro_empresa.html", {})
 
 def cadastro_contato(request, *args, **kwargs):
-    return render(request, "Cadastro_contato.html", {})
+    form = Contato_form
+    context = {
+        "form": form,
+    }
+
+    if request.method == 'POST':
+        print(request.POST.get)
+
+    return render(request, "Cadastro_contato.html", context)

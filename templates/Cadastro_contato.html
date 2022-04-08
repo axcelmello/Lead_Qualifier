@@ -15,9 +15,13 @@
     <header>
         {% include 'Navbar_up.html' %}
     </header>
-
-    <h1>Cadastro Contato</h1>
-
+    <div>
+        <h2>Cadastro Contato</h2>
+        <form name = "Cadastro Empresa" method="post" action="."> {% csrf_token %}
+            {{ form.as_ul }}
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
     <footer>
         {% include 'Navbar_down.html' %}
     </footer>
