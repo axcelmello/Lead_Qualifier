@@ -12,12 +12,18 @@ class Cadastro_empresa(models.Model):
     endereco          = models.CharField(max_length=30)
     pais_sede         = models.CharField(max_length=25)
 
+    def __str__(self):
+        return self.nome_fantasia
+
 class Cadastro_contato(models.Model):
     nome              = models.CharField(max_length=50)
     nomeempresa       = models.ForeignKey(Cadastro_empresa, on_delete=models.PROTECT, to_field="nome_fantasia")
     cargo             = models.CharField(max_length=25)
     telefone          = models.IntegerField()
     email             = models.EmailField(max_length=25)
+
+    def __str__(self):
+        return self.nome
 
 class Dados_empresa(models.Model):
     SETOR = (
@@ -43,3 +49,6 @@ class Dados_empresa(models.Model):
     categoria         = models.CharField(max_length=120)    #tecnologia, saúde, produtos, industria
     capital           = models.CharField(max_length=15, choices=CAPITAL)
     abrangencia       = models.CharField(max_length=25, choices=ABRANGENCIA)
+
+    def __str__(self):
+        return self.cnpj

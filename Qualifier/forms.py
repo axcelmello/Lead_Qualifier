@@ -16,3 +16,10 @@ class Empresa_form(forms.Form):
     site = forms.CharField()
     endereco = forms.CharField()
     pais_sede = forms.CharField()
+
+    #Dados empresa
+    n_funcionarios = forms.IntegerField()
+    setor = forms.CharField()
+    categoria = forms.CharField()
+    capital = forms.CharField()
+    abrangencia = forms.CharField()
