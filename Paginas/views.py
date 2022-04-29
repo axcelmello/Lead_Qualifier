@@ -23,7 +23,7 @@ def cadastro_empresa(request, *args, **kwargs):
     }
 
     if request.method == 'POST':
-        print(request.POST.get)
+        #print(request.POST.get)
 
         contato = Cadastro_empresa(
             nome_fantasia   = request.POST.get("nome_fantasia"),
@@ -57,6 +57,15 @@ def cadastro_contato(request, *args, **kwargs):
     }
 
     if request.method == 'POST':
-        print(request.POST.get)
+        # print(request.POST.get)
+
+        contato = Cadastro_contato(
+            nome = request.POST.get("nome"),
+            nomeempresa = request.POST.get("nomeempresa"),
+            cargo = request.POST.get("cargo"),
+            telefone = request.POST.get("telefone"),
+            email = request.POST.get("email"),
+        )
+        contato.save()
 
     return render(request, "Cadastro_contato.html", context)

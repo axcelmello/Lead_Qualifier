@@ -17,7 +17,7 @@ class Cadastro_empresa(models.Model):
 
 class Cadastro_contato(models.Model):
     nome              = models.CharField(max_length=50)
-    nomeempresa       = models.ForeignKey(Cadastro_empresa, on_delete=models.PROTECT, to_field="nome_fantasia")
+    nomeempresa       = models.CharField(max_length=50)
     cargo             = models.CharField(max_length=25)
     telefone          = models.IntegerField()
     email             = models.EmailField(max_length=25)
