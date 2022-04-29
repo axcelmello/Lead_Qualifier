@@ -43,7 +43,7 @@ class Dados_empresa(models.Model):
         ('Nacional', 'Nacional'),
         ('Multinacional', 'Multinacional'),
     )
-    cnpj              = models.ForeignKey(Cadastro_empresa, on_delete=models.PROTECT, to_field="cnpj")
+    cnpj              = models.CharField(max_length=18, unique=True)
     n_funcionarios    = models.IntegerField()
     setor             = models.CharField(max_length=15, choices=SETOR)
     categoria         = models.CharField(max_length=120)    #tecnologia, saúde, produtos, industria

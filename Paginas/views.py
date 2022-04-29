@@ -37,6 +37,16 @@ def cadastro_empresa(request, *args, **kwargs):
         )
         contato.save()
 
+        dados = Dados_empresa(
+            cnpj = contato.cnpj,
+            n_funcionarios  = request.POST.get("n_funcionarios"),
+            setor = request.POST.get("setor"),
+            categoria = request.POST.get("categoria"),
+            capital = request.POST.get("capital"),
+            abrangencia = request.POST.get("abrangencia"),
+        )
+        dados.save()
+
 
     return render(request, "Cadastro_empresa.html", context)
 

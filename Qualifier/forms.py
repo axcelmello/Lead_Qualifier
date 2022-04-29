@@ -10,7 +10,7 @@ class Contato_form(forms.Form):
 class Empresa_form(forms.Form):
     nome_fantasia = forms.CharField()
     razao_social = forms.CharField()
-    cnpj = forms.IntegerField()
+    cnpj = forms.CharField()
     telefone = forms.IntegerField()
     email = forms.EmailField()
     site = forms.CharField()
