@@ -14,7 +14,18 @@ def homepage(request, *args, **kwargs):
     return render(request, "Homepage.html", {})
 
 def painel(request, *args, **kwargs):
-    return render(request, "Painel.html", {})
+
+    list_empresas = Cadastro_empresa.objects.all()
+    list_contatos = Cadastro_contato.objects.all()
+    list_dados = Dados_empresa.objects.all()
+
+    context = {
+        'empresas' : list_empresas,
+        'contatos' : list_contatos,
+        'dados' : list_dados,
+    }
+
+    return render(request, "Painel.html", context)
 
 def cadastro_empresa(request, *args, **kwargs):
     form = Empresa_form

@@ -4,23 +4,107 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link {% static 'css/homepage.css' %} rel="stylesheet">
-
 <html lang="en">
+
+<!--- Data Table CSS --->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Painel</title>
 </head>
 <body>
-
     <header>
         {% include 'Navbar_up.html' %}
     </header>
-
-    <h2>Painel</h2>
+    <div>
+        <div>
+            <h2>Painel</h2>
+        </div>
+        <div>
+            <div>
+                <table id="tabelaempresa" class="table bordered">
+                    <thead>
+                        <tr>
+                            <th > Nome Fantasia </th>
+                            <th> Razão Social </th>
+                            <th> CNPJ </th>
+                            <th> Telefone </th>
+                            <th> E-mail </th>
+                            <th> Site </th>
+                            <th> Endereço </th>
+                            <th> Pais Sede </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for Empresa in empresas %}
+                        <tr>
+                            <td> {{ Empresa.nome_fantasia }} </td>
+                            <td> {{ Empresa.razao_social }} </td>
+                            <td> {{ Empresa.cnpj }} </td>
+                            <td> {{ Empresa.telefone }} </td>
+                            <td> {{ Empresa.email }} </td>
+                            <td> {{ Empresa.site }} </td>
+                            <td> {{ Empresa.endereco }} </td>
+                            <td> {{ Empresa.pais_sede }} </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table id="tabelacontato" class="table bordered">
+                    <thead>
+                        <tr>
+                            <th> Nome Contato </th>
+                            <th> Nome Empresa </th>
+                            <th> Cargo </th>
+                            <th> Telefone </th>
+                            <th> E-mail </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for Contato in contatos %}
+                        <tr>
+                            <td> {{ Contato.nome }} </td>
+                            <td> {{ Contato.nomeempresa }} </td>
+                            <td> {{ Contato.cargo }} </td>
+                            <td> {{ Contato.telefone }} </td>
+                            <td> {{ Contato.email }} </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <footer>
         {% include 'Navbar_down.html' %}
     </footer>
+
+    <!--- Data Table Jquery --->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $('#tabelaempresa').DataTable({
+            paging: true,
+            pageLength: 10,
+        });
+    </script>
+    <script>
+        $('#tabelacontato').DataTable({
+            paging: true,
+            pageLength: 10,
+        });
+    </script>
 
 </body>
 </html>
