@@ -14,18 +14,104 @@
         {% include 'Navbar_up.html' %}
     </header>
 
-    <div>
-        <h2>Cadastro Empresa</h2>
-        <div class="col-sm-12 col-md-10 col-lg-8">
-            <div class="form-row">
-                <form name="Cadastro Empresa" method="post" action="."> {% csrf_token %}
-                        {{ form.as_p }}
-                    <input type="submit" value="Cadastrar">
-                </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Cadastro Empresa</h2>
+            </div>
+        </div>
+
+        <div class="row mb-6 justify-content-center my-3">
+            <div class="col-sm-12 col-md-10 col-lg-8">
+                <div class="form-group">
+                    <form name="Cadastro Empresa" method="post" action="."> {% csrf_token %}
+                            <div class="form-row">
+                                <div class="form-group col-sm-5">
+                                    <label for="id_nome_fantasia">
+                                        Nome Fantasia
+                                    </label>
+                                    {{ form.nome_fantasia }}
+                                </div>
+                                <div class="form-group col-sm-5">
+                                    <label for="id_razao_social">
+                                    Razão Social
+                                    </label>
+                                    {{ form.razao_social }}
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="id_cnpj">
+                                    Cnpj
+                                </label>
+                                {{ form.cnpj }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_telefone">
+                                    Telefone
+                                </label>
+                                {{ form.telefone }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_email">
+                                    E-mail
+                                </label>
+                                {{ form.email }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_site">
+                                    Site
+                                </label>
+                                {{ form.site }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_endereco">
+                                    Endereço
+                                </label>
+                                {{ form.endereco }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_pais_sede">
+                                    Pais Sede
+                                </label>
+                                {{ form.pais_sede }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_n_funcionarios">
+                                    N° de Funcionários
+                                </label>
+                                {{ form.n_funcionarios }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_setor">
+                                    Setor
+                                </label>
+                                {{ form.setor }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_categoria">
+                                    Categoria
+                                </label>
+                                {{ form.categoria }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_capital">
+                                    Capital
+                                </label>
+                                {{ form.capital }}
+                            </div>
+                            <div class="form-row">
+                                <label for="id_abrangencia">
+                                    Abrangência
+                                </label>
+                                {{ form.abrangencia }}
+                            </div>
+                        <input type="submit" value="Cadastrar">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-
     <footer>
         {% include 'Navbar_down.html' %}
     </footer>
