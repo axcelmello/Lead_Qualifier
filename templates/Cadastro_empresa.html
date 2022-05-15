@@ -3,9 +3,8 @@
 <!DOCTYPE html>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link {% static 'css/homepage.css' %} rel="stylesheet">
 
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Cadastro Empresa</title>
@@ -17,10 +16,14 @@
 
     <div>
         <h2>Cadastro Empresa</h2>
-        <form name="Cadastro Empresa" method="post" action="."> {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Cadastrar">
-        </form>
+        <div class="col-sm-12 col-md-10 col-lg-8">
+            <div class="form-row">
+                <form name="Cadastro Empresa" method="post" action="."> {% csrf_token %}
+                        {{ form.as_p }}
+                    <input type="submit" value="Cadastrar">
+                </form>
+            </div>
+        </div>
     </div>
 
     <footer>
