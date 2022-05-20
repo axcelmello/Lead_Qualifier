@@ -4,18 +4,18 @@ class Contato_form(forms.Form):
     nome          = forms.CharField()
     nomeempresa   = forms.CharField()
     cargo         = forms.CharField()
-    telefone      = forms.IntegerField()
+    telefone      = forms.CharField()
     email         = forms.EmailField()
 
 class Empresa_form(forms.Form):
-    nome_fantasia = forms.CharField(label="Nome Fantasia", widget=forms.TextInput(attrs={'class':'form-control'}))
-    razao_social = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    cnpj = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    telefone = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    site = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    endereco = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    pais_sede = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    nome_fantasia = forms.CharField()
+    razao_social = forms.CharField()
+    cnpj = forms.CharField()
+    telefone = forms.CharField()
+    email = forms.EmailField()
+    site = forms.CharField()
+    endereco = forms.CharField()
+    pais_sede = forms.CharField()
 
     SETOR = (
         ('Primário', 'Primário'),
@@ -36,8 +36,8 @@ class Empresa_form(forms.Form):
     )
 
     #Dados empresa
-    n_funcionarios = forms.IntegerField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    setor = forms.ChoiceField(choices=SETOR,widget=forms.TextInput(attrs={'class':'form-control'}))
-    categoria = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    capital = forms.ChoiceField(choices=CAPITAL,widget=forms.TextInput(attrs={'class':'form-control'}))
-    abrangencia = forms.ChoiceField(widget=forms.TextInput(attrs={'class':'form-control'}),choices=ABRANGENCIA)
+    n_funcionarios = forms.IntegerField()
+    setor = forms.ChoiceField(choices=SETOR)
+    categoria = forms.CharField()
+    capital = forms.ChoiceField(choices=CAPITAL)
+    abrangencia = forms.ChoiceField(choices=ABRANGENCIA)

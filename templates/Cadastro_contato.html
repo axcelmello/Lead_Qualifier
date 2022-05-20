@@ -14,12 +14,22 @@
     <header>
         {% include 'Navbar_up.html' %}
     </header>
-    <div>
-        <h2>Cadastro Contato</h2>
-        <form name = "Cadastro Empresa" method="post" action="."> {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Cadastrar">
-        </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Cadastro Contato</h2>
+            </div>
+        </div>
+        <div class="row mb-6 justify-content-center my-3">
+            <div class="col-sm-12 col-md-10 col-lg-8">
+                <div class="form-group">
+                    <form name = "Cadastro Empresa" method="post" action="."> {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Cadastrar">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         {% include 'Navbar_down.html' %}
