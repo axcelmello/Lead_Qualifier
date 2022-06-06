@@ -1,4 +1,5 @@
 from django import forms
+from localflavor.br.forms import BRCNPJField, BRCNPJValidator
 
 class Contato_form(forms.Form):
     nome          = forms.CharField()
@@ -10,7 +11,7 @@ class Contato_form(forms.Form):
 class Empresa_form(forms.Form):
     nome_fantasia = forms.CharField()
     razao_social = forms.CharField()
-    cnpj = forms.CharField()
+    cnpj = BRCNPJField(validators=[BRCNPJValidator])
     telefone = forms.CharField()
     email = forms.EmailField()
     site = forms.CharField()
@@ -34,8 +35,7 @@ class Empresa_form(forms.Form):
         ('Nacional', 'Nacional'),
         ('Multinacional', 'Multinacional'),
     )
-
-    #Dados empresa
+    
     n_funcionarios = forms.IntegerField()
     setor = forms.ChoiceField(choices=SETOR)
     categoria = forms.CharField()

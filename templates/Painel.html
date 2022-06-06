@@ -1,7 +1,5 @@
 {% load static %}
 
-<!DOCTYPE html>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <html lang="pt-br">
 
@@ -19,7 +17,7 @@
         {% include 'Navbar_up.html' %}
     </header>
     <div style="background-color: black">
-        <div style="width: 100%; alignment: center">
+        <div style="width: 100%", align="center">
             <div class="card border-light shadow-sm mb-4">
                 <div class="card-body">
                     <table id="tabelaempresa" class="table table-centered" style="text-align: center">
@@ -72,34 +70,6 @@
                                 <td> {{ Contato.cargo }} </td>
                                 <td> {{ Contato.telefone }} </td>
                                 <td> {{ Contato.email }} </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="card border-light shadow-sm mb-4">
-                <div class="card-body">
-                    <table id="tabeladados" class="table bordered" style="text-align: center">
-                        <thead>
-                            <tr>
-                                <th> Cnpj </th>
-                                <th> N° Funcionarios </th>
-                                <th> Setor </th>
-                                <th> Categoria </th>
-                                <th> Capital </th>
-                                <th> Abrangencia </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for Dado in dados %}
-                            <tr>
-                                <td> {{ Dado.cnpj }} </td>
-                                <td> {{ Dado.n_funcionarios }} </td>
-                                <td> {{ Dado.setor }} </td>
-                                <td> {{ Dado.categoria }} </td>
-                                <td> {{ Dado.capital }} </td>
-                                <td> {{ Dado.abrangencia }} </td>
                             </tr>
                             {% endfor %}
                         </tbody>

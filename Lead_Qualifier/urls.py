@@ -25,7 +25,8 @@ urlpatterns = [
 
     ###Páginas criadas
     path('', Paginas.views.blank, name='blank'),
-    path('login', Paginas.views.login, name='login'),
+    path('login', Paginas.views.login_app, name='login'),
+    path('logout', Paginas.views.logout_app),
     path('homepage/', Paginas.views.homepage, name='homepage'),
     path('cadastro_empresa/', Paginas.views.cadastro_empresa),
     path('cadastro_contato/', Paginas.views.cadastro_contato),

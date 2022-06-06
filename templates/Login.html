@@ -1,23 +1,19 @@
 {% load static %}
 
-
-
-<!DOCTYPE html>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link {% static 'css/homepage.css' %} rel="stylesheet">
 
-<html lang="pt-br">
+
+<style>h3{color: red}</style>    
+
 <head>
     <meta charset="UTF-8">
     <title>Lead Qualifier | Login</title>
 </head>
+
 <body>
 
-    <header>
-   
-    </header>
-    
+ 
     {% for message in messages %}
     <h3>{{message}}</h3>
     {% endfor %}  
@@ -32,10 +28,9 @@
 
     </form>
 
-    <footer>
+    <footer id="footer">
         {% include 'Navbar_down.html' %}
     </footer>
-
-
+    
 </body>
-</html>
+
