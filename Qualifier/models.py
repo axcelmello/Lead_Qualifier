@@ -1,4 +1,5 @@
 from django.db import models
+from input_mask.widgets import InputMask
 
 # Create your models here.
 

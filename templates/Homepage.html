@@ -8,16 +8,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Lead Qualifier | Home</title>
 </head>
 <body>
 
+    {% if user.is_authenticated %}
     <header>
         {% include 'Navbar_up.html' %}
     </header>
 
-    <h1>Homepage</h1>
-
+    
+    <h1>Bem-vindo(a), {{user.username}}.</h1>
+    
+    {% endif %}
+    
     <footer>
         {% include 'Navbar_down.html' %}
     </footer>
