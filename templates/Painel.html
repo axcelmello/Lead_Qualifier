@@ -23,14 +23,14 @@
                     <table id="tabelaempresa" class="table table-centered" style="text-align: center">
                         <thead class="table-sucess">
                             <tr>
-                                <th > Nome Fantasia </th>
+                                <th> Nome Fantasia </th>
                                 <th> Razão Social </th>
                                 <th> CNPJ </th>
                                 <th> Telefone </th>
                                 <th> E-mail </th>
                                 <th> Site </th>
                                 <th> Endereço </th>
-                                <th> Pais Sede </th>
+                                <th> País Sede </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,11 +65,11 @@
                         <tbody>
                             {% for Contato in contatos %}
                             <tr>
-                                <td> {{ Contato.nome }} </td>
-                                <td> {{ Contato.nomeempresa }} </td>
-                                <td> {{ Contato.cargo }} </td>
-                                <td> {{ Contato.telefone }} </td>
-                                <td> {{ Contato.email }} </td>
+                                <td> {{ Contato.nome_contato }} </td>
+                                <td> {{ Contato.nome_empresa_contato }} </td>
+                                <td> {{ Contato.cargo_contato }} </td>
+                                <td> {{ Contato.telefone_contato }} </td>
+                                <td> {{ Contato.email_contato }} </td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -98,12 +98,6 @@
     </script>
     <script>
         $('#tabelacontato').DataTable({
-            paging: true,
-            pageLength: 10,
-        });
-    </script>
-    <script>
-        $('#tabeladados').DataTable({
             paging: true,
             pageLength: 10,
         });

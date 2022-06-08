@@ -23,8 +23,40 @@
         <div class="row mb-6 justify-content-center my-3">
             <div class="col-sm-12 col-md-10 col-lg-8">
                 <div class="form-group">
-                    <form name = "Cadastro Empresa" method="post" action="."> {% csrf_token %}
-                        {{ form.as_p }}
+                    <form name = "Cadastro Empresa" method="post" action="."> 
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div>
+                                <label for="nome_contato">
+                                    Nome
+                                </label>
+                                {{ form.nome_contato }}
+                            </div><br>
+                            <div>
+                                <label for="nome_empresa_contato">
+                                Empresa
+                                </label>
+                                {{ form.nome_empresa_contato }}
+                            </div><br>
+                        </div>
+                        <div class="form-row">
+                            <label for="cargo_contato">
+                                Cargo
+                            </label>
+                            {{ form.cargo_contato }}
+                        </div><br>
+                                                <div class="form-row">
+                            <label for="email_contato">
+                                E-mail
+                            </label>
+                            {{ form.email_contato }}
+                        </div><br>
+                        <div class="form-row">
+                            <label for="telefone_contato">
+                                Telefone
+                            </label>
+                            {{ form.telefone_contato }}
+                        </div><br>
                         <input type="submit" value="Cadastrar">
                     </form>
                 </div>

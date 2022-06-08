@@ -99,19 +99,19 @@ def cadastro_empresa(request, *args, **kwargs):
             #print(request.POST.get)
 
             contato = Cadastro_empresa(
-                nome_fantasia   = request.POST.get("nome_fantasia"),
-                razao_social    = request.POST.get("razao_social"),
-                cnpj            = request.POST.get("cnpj"),
-                telefone        = request.POST.get("telefone"),
-                email           = request.POST.get("email"),
-                site            = request.POST.get("site"),
-                endereco        = request.POST.get("endereco"),
-                pais_sede       = request.POST.get("pais_sede"),
-                n_funcionarios  = request.POST.get("n_funcionarios"),
-                setor           = request.POST.get("setor"),
-                categoria       = request.POST.get("categoria"),
-                capital         = request.POST.get("capital"),
-                abrangencia     = request.POST.get("abrangencia"),
+                nome_fantasia           = request.POST.get("nome_fantasia"),
+                razao_social            = request.POST.get("razao_social"),
+                cnpj                    = request.POST.get("cnpj"),
+                telefone_empresa        = request.POST.get("telefone_empresa"),
+                email_empresa           = request.POST.get("email_empresa"),
+                site                    = request.POST.get("site"),
+                endereco                = request.POST.get("endereco"),
+                pais_sede               = request.POST.get("pais_sede"),
+                n_funcionarios          = request.POST.get("n_funcionarios"),
+                setor                   = request.POST.get("setor"),
+                categoria               = request.POST.get("categoria"),
+                capital                 = request.POST.get("capital"),
+                abrangencia             = request.POST.get("abrangencia"),
             )
             contato.save()
 
@@ -135,11 +135,11 @@ def cadastro_contato(request, *args, **kwargs):
             # print(request.POST.get)
 
             contato = Cadastro_contato(
-                nome = request.POST.get("nome"),
-                nomeempresa = request.POST.get("nomeempresa"),
-                cargo = request.POST.get("cargo"),
-                telefone = request.POST.get("telefone"),
-                email = request.POST.get("email"),
+                nome_contato = request.POST.get("nome_contato"),
+                nome_empresa_contato = request.POST.get("nome_empresa_contato"),
+                cargo_contato = request.POST.get("cargo_contato"),
+                telefone_contato = request.POST.get("telefone_contato"),
+                email_contato = request.POST.get("email_contato"),
             )
             contato.save()
 
