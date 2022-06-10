@@ -19,14 +19,16 @@ from django.urls import path
 import Paginas.views
 
 urlpatterns = [
-    ###Pagina de administração do Django
+
+    ###Página de administração do Django
     path('admin/', admin.site.urls),
 
-    ###Paginas criadas
-    path('', Paginas.views.homepage),
-    path('homepage/', Paginas.views.homepage),
+    ###Páginas criadas
+    path('', Paginas.views.blank, name='blank'),
+    path('login', Paginas.views.login_app, name='login'),
+    path('logout', Paginas.views.logout_app),
+    path('homepage/', Paginas.views.homepage, name='homepage'),
     path('cadastro_empresa/', Paginas.views.cadastro_empresa),
     path('cadastro_contato/', Paginas.views.cadastro_contato),
-
     path('painel/', Paginas.views.painel),
 ]

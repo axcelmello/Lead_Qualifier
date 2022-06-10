@@ -1,31 +1,17 @@
-from django.db import models
+from django.db import models 
+from localflavor.br.models import BRCNPJField
 
 # Create your models here.
 
 class Cadastro_empresa(models.Model):
-    nome_fantasia     = models.CharField(max_length=50, unique=True)
-    razao_social      = models.CharField(max_length=50)
-    cnpj              = models.IntegerField(unique=True)
-    telefone          = models.IntegerField()
-    email             = models.EmailField(max_length=25)
-    site              = models.CharField(max_length=25)
-    endereco          = models.CharField(max_length=30)
-    pais_sede         = models.CharField(max_length=25)
-
-    def __str__(self):
-        return self.nome_fantasia
-
-class Cadastro_contato(models.Model):
-    nome              = models.CharField(max_length=50)
-    nomeempresa       = models.CharField(max_length=50)
-    cargo             = models.CharField(max_length=25)
-    telefone          = models.IntegerField()
-    email             = models.EmailField(max_length=25)
-
-    def __str__(self):
-        return self.nome
-
-class Dados_empresa(models.Model):
+    nome_fantasia             = models.CharField(max_length=65)
+    razao_social              = models.CharField(blank=True,max_length=65)
+    cnpj                      = BRCNPJField(blank=True,max_length=14,unique=True)
+    telefone_empresa          = models.CharField(blank=True,max_length=14)
+    email_empresa             = models.EmailField(blank=True,max_length=65)
+    site                      = models.CharField(blank=True,max_length=65)
+    endereco                  = models.CharField(blank=True,max_length=65)
+    pais_sede                 = models.CharField(blank=True,max_length=65)
     SETOR = (
         ('Primário', 'Primário'),
         ('Secundário', 'Secundário'),
@@ -43,12 +29,24 @@ class Dados_empresa(models.Model):
         ('Nacional', 'Nacional'),
         ('Multinacional', 'Multinacional'),
     )
-    cnpj              = models.CharField(max_length=18, unique=True)
-    n_funcionarios    = models.IntegerField()
-    setor             = models.CharField(max_length=15, choices=SETOR)
-    categoria         = models.CharField(max_length=120)    #tecnologia, saúde, produtos, industria
-    capital           = models.CharField(max_length=15, choices=CAPITAL)
-    abrangencia       = models.CharField(max_length=25, choices=ABRANGENCIA)
+    n_funcionarios    = models.IntegerField(blank=True,)
+    setor             = models.CharField(max_length=65, choices=SETOR)
+    categoria         = models.CharField(blank=True,max_length=120)    #tecnologia, saúde, produtos, industria
+    capital           = models.CharField(max_length=65, choices=CAPITAL)
+    abrangencia       = models.CharField(max_length=65, choices=ABRANGENCIA)
 
     def __str__(self):
         return self.cnpj
+
+
+
+class Cadastro_contato(models.Model):
+    nome_contato              = models.CharField(max_length=65)
+    id_empresa_FK             = models.ForeignKey('Cadastro_empresa', on_delete=models.CASCADE, null=True)
+    nome_empresa_contato      = models.CharField(max_length=65)
+    cargo_contato             = models.CharField(blank=True,max_length=65)
+    telefone_contato          = models.CharField(blank=True,max_length=14)
+    email_contato             = models.EmailField(blank=True,max_length=65)
+
+    def __str__(self):
+        return self.nome_contato
